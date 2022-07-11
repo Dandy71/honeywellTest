@@ -1,0 +1,74 @@
+<div
+  fxFlex
+  fxHide.xs
+  fxLayout
+  fxLayoutAlign="center center"
+  class="p-20x h-100p"
+>
+  <ngx-datatable
+    fxFlex="0 1 800px"
+    class="material min-h-500x max-h-800x"
+    [rows]="incidents"
+    [loadingIndicator]="loadingIndicator"
+    columnMode="force"
+    [headerHeight]="50"
+    [footerHeight]="50"
+    [rowHeight]="50"
+    [scrollbarV]="true"
+  >
+    <ngx-datatable-column name="Priority" [width]="300">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <div Fxlayout fxLayoutAlign="start center" fxLayoutGap="10px">
+          <img [src]="row.priorityIconUrl" />
+          <span>{{ row.priorityStr }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Name" [width]="300">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{ value }}
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Time" [width]="300">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{ value }}
+      </ng-template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Location" [width]="300">
+      <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{ this.incidentService.locationMap.get(row.locationId) }}
+      </ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<div fxHide.gt-xs fxLayout="column" class="pv-10x">
+  <div *ngFor="let row of incidents" class="pv-10x ph-20x">
+    <div class="bg-color-fa border-1-burlywood border-radius-5x">
+      <div
+        Fxlayout
+        fxLayoutAlign="center center"
+        fxLayoutGap="10px"
+        class="p-10x bg-color-burlywood"
+      >
+        <img [src]="row.priorityIconUrl" />
+        <span>{{ row.priorityStr }}</span>
+      </div>
+      <div class="p-10x">
+        <div class="p-10x" fxlayout>
+          <span fxFlex="0 0 6em">Name :</span>
+          <span>{{ row.name }}</span>
+        </div>
+        <div class="p-10x" fxlayout>
+          <span fxFlex="0 0 6em">Time :</span>
+          <span>{{ row.time }}</span>
+        </div>
+        <div class="p-10x" fxlayout>
+          <span fxFlex="0 0 6em">Location :</span>
+          {{ this.incidentService.locationMap.get(row.locationId) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

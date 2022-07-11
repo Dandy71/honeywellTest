@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; box-sizing: border-box;}
+
+.h-100p{
+    height: 100%;
+}
+
+.max-h-800x{
+    max-height: 800px;
+}
+.min-h-100vh{
+    min-height: 100vh;
+}
+.min-h-500x{
+    min-height: 500px;
+}
+
+.margin-0{
+    margin:0;
+}
+
+.p-20x{
+    padding: 20px;
+}
+.p-5x{
+    padding: 5px;
+}
+
+.pv-10x{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ph-20x{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.bg-color-fa{
+    background-color: #fafafa;
+}
+.bg-color-burlywood{
+    background-color: burlywood
+}
+.color-grey{
+    color:grey;
+}
+.border-1-burlywood{
+    border: 1px solid burlywood;
+}
+.border-radius-5x{
+    border-radius: 5px;
+}
